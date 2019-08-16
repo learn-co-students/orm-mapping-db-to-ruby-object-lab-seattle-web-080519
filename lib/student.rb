@@ -101,6 +101,14 @@ class Student
   end
 
   def self.all_students_in_grade_X(givenGrade)
+
+    #METHOD 1
+    # sql = "SELECT * FROM students WHERE grade = ? ORDER BY students.id"
+    # DB[:conn].execute(sql, grade).map do |row|
+    #   self.new_from_db(row)
+    # end
+
+    #METHOD 2
     students = self.all
     returnData = []
     students.select do |student_obj|
